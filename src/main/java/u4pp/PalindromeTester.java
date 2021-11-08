@@ -4,9 +4,9 @@ package u4pp;
 */
 import java.util.Scanner;
 
-public class PalindromeTester {
-    /**
-     * YOUR JAVADOC HERE
+public class PalindromeTester 
+ race car;  /**
+     * YOrUR JAVADOC HERE
      */
     public static void execute(Scanner sc) {
         /* YOUR CODE HERE */

@@ -4,24 +4,59 @@ package u4pp;
 * JAVADOC HERE
 */
 import java.util.Scanner;
+ 
+class Main {
+  public static void main(String[] args) {	
+		Scanner in = new Scanner(System.in);		System.out.println("Welcome to Rock, Paper, Scissors!");
 
-public class RockPaperScissors {
+		
+		while(true) {
+		
+	
+			System.out.print("What is your move? To make a move, enter rock, paper, or scissors. To quit the game, enter quit. ");
+			String myMove = in.nextLine();
+			
+			
+			if(myMove.equals("quit")) {
+				break;
+			}
 
-    /* ANY CODE YOU NEED HERE */
+			
+			if(!myMove.equals("rock") && !myMove.equals("paper") && !myMove.equals("scissors")) {
 
-    /**
-     * JAVADOC HERE
-     */
-    public static void play(Scanner sc) {
-        /* YOUR CODE HERE */
-    }
+				System.out.println("Your move isn't valid!");
+			
+			} else {
 
-    /**
-     * JAVADOC HERE
-     */
-    public static int results(String playerChoice, String computerChoice) {
-        /* YOUR CODE HERE */
-    }
+				
+				int rand = (int)(Math.random()*3);
+				
+	
+				String opponentMove = "";
+				if(rand == 0) {
+					opponentMove = "rock";
+				} else if(rand == 1) {
+					opponentMove = "paper";
+				} else {
+					opponentMove = "scissors";
+				}
+				System.out.println("Opponent move: " + opponentMove);
+					
+				
+				if(myMove.equals(opponentMove)) {
+					System.out.println("It's a tie!");
+				} else if((myMove.equals("rock") && opponentMove.equals("scissors")) || (myMove.equals("scissors") && opponentMove.equals("paper")) || (myMove.equals("paper") && opponentMove.equals("rock"))) {
+					System.out.println("You won!");
+				} else {
+					System.out.println("You lost!");
+				}
 
-    /* any helper methods you might need */
-}
+			}
+
+		}
+
+	
+		System.out.println("Thanks for playing Rock, Paper, Scissors!");
+
+  }
+}  
